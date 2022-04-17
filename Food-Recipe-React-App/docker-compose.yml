@@ -1,0 +1,7 @@
+version: "3"
+services:
+  food-recipe-react-app:
+    #Build from current directory
+    build:
+      context: .
+      dockerfile: Dockerfile

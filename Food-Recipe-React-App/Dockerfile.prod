@@ -1,0 +1,36 @@
+# Stage-1: Base node image
+FROM node:16.13-alpine as builder
+
+# The source directory
+WORKDIR /app
+
+# Copy the package.json and package-lock.json
+COPY package.json .
+COPY package-lock.json .
+
+# Install the packages
+RUN npm install
+
+# Copy the rest of the source code
+COPY . .
+
+# build the react-app
+RUN npm run build
+
+# Stage-2: Base nginx image for serving
+FROM nginx:1.21-alpine as prod
+
+# Run Requirements
+RUN apk --no-cache add curl
+RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.1.0/envsubst-`uname -s`-`uname -m` -o envsubst && \
+    chmod +x envsubst && \
+    mv envsubst /usr/local/bin
+
+# Copy the nginx config file to the base image path    
+COPY ./nginx.config /etc/nginx/nginx.template
+
+# Run the command once the container is up and running
+CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/nginx.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+
+# Copy the built react-app to the nginx working directory
+COPY --from=builder /app/build /usr/share/nginx/html

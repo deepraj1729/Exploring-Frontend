@@ -1,0 +1,22 @@
+version: "3"
+services:
+  food-recipe-react-app:
+    #-it flag (for older versions of react)
+    stdin_open: true
+    tty: true
+
+    #Build from current directory
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    #ports
+    ports:
+      - "3000:3000"
+
+    #Bind mount
+    volumes:
+      - "./src:/app/src"
+    
+    #Environment variables
+    env_file:
+      - ".env"
