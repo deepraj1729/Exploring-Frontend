@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VidMap</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #map {
+            border: 2px solid #333;
+            width: 80vw;
+            height: 80vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">VidMap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Map</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container"><br>
+        <div id="map"></div>
+
+        <script>
+
+            function initMap() {
+                var options = {
+                    center: { lat: 23.843310, lng: 91.424713 },
+                    zoom: 16
+                }
+
+                var map = new google.maps.Map(document.getElementById('map'), options);
+
+                google.maps.event.addListener(map, 'click', function (event) {
+                    addMarker({ lat: 23.843310, lng: 91.424713 });
+                    addMarker({ lat: 23.844213, lng: 91.420958 });
+                    addMarker({ lat: 23.845235, lng: 91.425080 });
+                    addMarker({ lat: 23.840550, lng: 91.423774 });
+                    addMarker({ lat: 23.841601, lng: 91.427554 });
+                    addMarker({ lat: 23.843134, lng: 91.419242 });
+                    addMarker({ lat: 23.842222, lng: 91.433429 });
+                    addMarker({ lat: 23.840880, lng: 91.420828 });
+                });
+
+                var markers = [
+                    {
+                        coords: { lat: 23.843310, lng: 91.424713 },
+                        content:'<h5>Unknown Area</h5>'
+                    },
+                    {
+                        coords: { lat: 23.844213, lng: 91.420958 },
+                        content:'<h5>Aryabhatta Hostel</h5>'
+                    },
+                    {
+                        coords: { lat: 23.845235, lng: 91.425080 },
+                        content:'<h5>RNT Hostel</h5>'
+                    },
+                    {
+                        coords: { lat: 23.840550, lng: 91.423774 },
+                        content:'<h5>CSE Dept.</h5>'
+                    },
+                    {
+                        coords: { lat: 23.841601, lng: 91.427554 },
+                        content:'<h5>NITA Lake</h5>'
+                    },
+                    {
+                        coords: { lat: 23.843134, lng: 91.419242 },
+                        content:'<h5>Kendriya Vidyalaya</h5>'
+                    },
+                    {
+                        coords: { lat: 23.842222, lng: 91.433429 },
+                        content:'<h5>Coconut Garden</h5>'
+                    },
+                    {
+                        coords: { lat: 23.840880, lng: 91.420828 },
+                        content:'<h5>Admin Block</h5>'
+                    }
+                ];
+
+                for (var i = 0; i < markers.length; i++) {
+                    addMarker(markers[i]);
+                }
+
+                function addMarker(props) {
+                    var marker = new google.maps.Marker({
+                        position: props.coords,
+                        map: map
+                    });
+
+                    if (props.content) {
+                        var infoWindow = new google.maps.InfoWindow({
+                            content: props.content
+                        });
+
+                        marker.addListener('click', function () {
+                            infoWindow.open(map, marker);
+                        });
+                    }
+                }
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaEF-0MFp71hMJlaXAuAuHay3DY5IYFL0&callback=initMap"></script>
+    </div>
+</body>
+
+</html>
