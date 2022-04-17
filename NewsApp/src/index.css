@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "BeautifulPeople";
+  src: local("BeautifulPeople"),
+   url("./fonts/BeautifulPeople/Beautiful-People.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "StoryElement";
+  src: local("StoryElement"),
+   url("./fonts/StoryElement/Story-Element.ttf") format("truetype");
+  font-weight: bold;
+}

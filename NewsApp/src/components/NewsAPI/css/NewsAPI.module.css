@@ -1,0 +1,31 @@
+.nav_btn{
+    color: white;
+}
+
+.postView{
+    padding: 1vw;
+    border-radius: 20px;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
+.link{
+    text-decoration: none;
+    color: rgb(102, 102, 224)
+}
+
+.noData{
+    color: white;
+    font-size: 20px;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.categoryName{
+    color: white;
+    font-family: "BeautifulPeople", sans-serif;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+}
