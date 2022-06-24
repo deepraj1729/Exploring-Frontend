@@ -1,0 +1,54 @@
+#canvas
+{
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    background-color: white;
+    height:100%;
+    width:100%;
+}
+
+
+#colors button
+{
+    width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	margin-top: 0px;
+}
+#black 
+{
+    background: black;
+}
+#pink 
+{
+    background: pink;
+}
+#red
+{
+    background: red;
+}
+#green 
+{ 
+    background: green;
+}
+#blue 
+{
+    background: blue;
+}
+#orange 
+{
+    background: orange;
+}
+
+
+body{
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgb(36, 39, 129) 0%,
+      rgba(67, 24, 138, 0.9) 59%,
+      rgba(95, 31, 148, 0.9) 100%
+    );
+    height:100%;
+    min-height: 100vh;
+  }

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>LenCo</title>
+
+    <style>
+        body {
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Length Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input id="metInput" type="number" class="form-control form-control-lg"
+                            placeholder="Enter length in meter">
+                    </div>
+                </form>
+
+                <div id="output">
+                    <div class="card text-white bg-primary mb-2 p-2">
+                        <div class="card-block">
+                            <h4>Feets: </h4>
+                            <div id="feetOutput"></div>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-success mb-2 p-2">
+                        <div class="card-block">
+                            <h4>Inches: </h4>
+                            <div id="inOutput"></div>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-danger mb-2 p-2">
+                        <div class="card-block">
+                            <h4>Kilometers: </h4>
+                            <div id="kmOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+    
+</body>
+
+</html>

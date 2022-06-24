@@ -1,0 +1,37 @@
+.upload-container{
+     border: 1px solid black;
+     box-shadow: 7px 10px 5px #888888;
+     padding:5vh;
+ }
+
+header{
+     background-color: #4CAF50;
+     color: white;
+     padding: 10px;
+     text-align: center;
+     font-size: 30px;
+     font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#response{
+     margin-top: 10px;
+     background-color: #4CAF50;
+     color: white;
+     padding: 10px;
+     text-align: center;
+     font-size: 20px;
+     font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#preview{
+     width: 100px;
+     height: 100px;
+     margin: 0 auto;
+     border: 1px solid gray;
+     border-radius: 3px;
+     margin-bottom: 15px;
+}
+
+#prev_img{
+     display: none;
+}

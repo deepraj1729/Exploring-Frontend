@@ -1,0 +1,40 @@
+body{
+    margin:0;
+}
+.box{
+    height: 100px;
+    background-color: gray;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.box::-webkit-scrollbar{
+    display:none;
+}
+
+header{
+    height:50px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.card-a{
+    display: inline-block;
+    height:100%;
+    width:100px;
+    background-color: red;
+}
+
+.card-b{
+    display: inline-block;
+    height:100%;
+    width:100px;
+    background-color: skyblue;
+}
+.card-c{
+    display: inline-block;
+    height:100%;
+    width:100px;
+    background-color: yellow;
+}
